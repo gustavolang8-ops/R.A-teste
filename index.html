@@ -16,9 +16,15 @@
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     
     <!-- Elemento que aparecerá quando a foto for reconhecida (cubo verde) -->
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-box position="0 0 0" scale="0.5 0.5 0.5" color="#00FF00" opacity="0.8"></a-box>
-    </a-entity>
+  <a-entity mindar-image-target="targetIndex: 0">
+  <!-- Grupo da Seta com animação de flutuação -->
+  <a-entity position="0 0.5 0.1" animation="property: position; to: 0 0.3 0.1; dir: alternate; dur: 1000; loop: true">
+    <!-- Ponta da Seta (invertida para baixo) -->
+    <a-cone position="0 0 0" radius-bottom="0.15" height="0.25" color="#FF3333" rotation="180 0 0"></a-cone>
+    <!-- Corpo da Seta -->
+    <a-cylinder position="0 0.3 0" radius="0.05" height="0.4" color="#FF3333"></a-cylinder>
+  </a-entity>
+</a-entity>
 
   </a-scene>
   <script src="script.js"></script>
