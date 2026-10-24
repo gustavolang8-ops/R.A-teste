@@ -17,17 +17,15 @@
     
     <!-- Elemento que aparecerá quando a foto for reconhecida (cubo verde) -->
  <a-entity mindar-image-target="targetIndex: 0">
-  <!-- Grupo principal com tamanho reduzido pela metade (scale) -->
-  <a-entity position="0 0.3 0.1" scale="0.5 0.5 0.5" animation="property: position; to: 0 0.1 0.1; dir: alternate; dur: 1000; loop: true">
+  <a-entity position="0 0.3 0.1" animation="property: position; to: 0 0.1 0.1; dir: alternate; dur: 1000; loop: true">
     
-    <!-- Frase acima da seta -->
-    <a-text value="COMPUTADOR" color="#00FF00" align="center" position="0 0.8 0" scale="1.2 1.2 1.2"></a-text>
+    <a-text value="COMPUTADOR" color="#008000" align="center" position="0 0.6 0" scale="1 1 1"></a-text>
 
-    <!-- Ponta da Seta (Verde) -->
-    <a-cone position="0 0 0" radius-bottom="0.15" height="0.25" color="#00FF00" rotation="180 0 0"></a-cone>
+    <!-- Ponta da seta (base estreita e curta) -->
+    <a-cone position="0 0 0" radius-bottom="0.05" height="0.12" color="#008000" rotation="180 0 0"></a-cone>
     
-    <!-- Corpo da Seta (Verde) -->
-    <a-cylinder position="0 0.3 0" radius="0.05" height="0.4" color="#00FF00"></a-cylinder>
+    <!-- Corpo da seta (haste muito fina e alongada) -->
+    <a-cylinder position="0 0.3 0" radius="0.01" height="0.5" color="#008000"></a-cylinder>
   </a-entity>
 </a-entity>
 
