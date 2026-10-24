@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste R.A. - Computador</title>
+  <title>Teste R.A. - Caixa</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Bibliotecas base do A-Frame e MindAR -->
   <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
 </head>
 <body>
-  <!-- Cena de Realidade Aumentada puxando o arquivo de referência -->
-  <a-scene mindar-image="imageTargetSrc: ./computador.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+  <!-- Cena atualizada para ler o ficheiro cafe.mind com filtros de suavização -->
+  <a-scene mindar-image="imageTargetSrc: ./cafe.mind; filterMinCF:0.0001; filterBeta: 0.001;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
     
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     
-    <!-- Elemento que aparecerá quando a foto for reconhecida (cubo verde) -->
- <a-entity mindar-image-target="targetIndex: 0">
-  <a-entity position="0 0.3 0.1" animation="property: position; to: 0 0.1 0.1; dir: alternate; dur: 1000; loop: true">
-    
-    <a-text value="COMPUTADOR" color="#008000" align="center" position="0 0.6 0" scale="1 1 1"></a-text>
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-entity position="0 0.3 0.1" animation="property: position; to: 0 0.1 0.1; dir: alternate; dur: 1000; loop: true">
+        
+        <!-- Frase atualizada para corresponder ao novo objeto -->
+        <a-text value="CAFE" color="#008000" align="center" position="0 0.6 0" scale="1 1 1"></a-text>
 
-    <!-- Ponta da seta (base estreita e curta) -->
-    <a-cone position="0 0 0" radius-bottom="0.05" height="0.12" color="#008000" rotation="180 0 0"></a-cone>
-    
-    <!-- Corpo da seta (haste muito fina e alongada) -->
-    <a-cylinder position="0 0.3 0" radius="0.01" height="0.5" color="#008000"></a-cylinder>
-  </a-entity>
-</a-entity>
+        <!-- Seta fina e longa -->
+        <a-cone position="0 0 0" radius-bottom="0.05" height="0.12" color="#008000" rotation="180 0 0"></a-cone>
+        <a-cylinder position="0 0.3 0" radius="0.01" height="0.5" color="#008000"></a-cylinder>
+      </a-entity>
+    </a-entity>
 
   </a-scene>
   <script src="script.js"></script>
